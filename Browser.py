@@ -12,22 +12,25 @@ class MainWindow(QMainWindow):
         self.showMaximized()
 
         #NavBar
-
         navbar = QToolBar()
         self.addToolBar(navbar)
 
+        #Backward button
         back_btn = QAction('Back', self)
         back_btn.triggered.connect(self.browser.back)
         navbar.addAction(back_btn)
 
+        #Forward button
         forward_btn = QAction('Forward', self)
         forward_btn.triggered.connect(self.browser.forward)
         navbar.addAction(forward_btn)
 
+        #Reload button
         reload_btn = QAction('Reload', self)
         reload_btn.triggered.connect(self.browser.reload)
         navbar.addAction(reload_btn)
 
+        #Home button
         home_btn = QAction('Home', self)
         home_btn.triggered.connect(self.navigate_home)
         navbar.addAction(home_btn)
